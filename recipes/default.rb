@@ -74,7 +74,7 @@ end
 
 service "rsyslog" do
   service_name "rsyslogd" if platform?("arch")
-  reload_command "service rsyslog force-reload" if platform?("debian")
+  reload_command "service rsyslog force-reload"
   supports :restart => true, :reload => true
   action [:enable, :start]
 end
